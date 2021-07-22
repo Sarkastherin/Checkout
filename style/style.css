@@ -159,6 +159,9 @@ input[type=number]::-webkit-outer-spin-button
   -webkit-appearance: none;
   margin: 0;
 }
+input[type=number] {
+    -moz-appearance:textfield; 
+}
 .cantidad button i{
     margin: 0;
 }
