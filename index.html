@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://kit.fontawesome.com/2a3a6513f8.js" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+  </style>
+  <title>Checkout Page</title>
+</head>
+<body>
+  <h1>Checkout</h1>
+  <div class="contenedor">
+    <form action="message_page.html" class="formulario" id="formulario">
+      <div class="form-control">
+        <h3>Contact Information</h3>
+        <div class="input-box">
+          <p>E-mail</p>
+          <span>
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="Enter your email..." required>
+          </span>
+            <!-- <span id="errorEmail" class="error"></span> -->
+        </div>
+        <div class="input-box">
+          <p>Phone</p>
+          <span>
+            <i class="fas fa-phone-alt"></i>
+            <input type="tel" id="phone" placeholder="Enter your phone..." required>
+          </span>
+        </div>
+      </div>
+      <div class="form-control">
+        <h3>Shipping address</h3>
+        <div class="input-box">
+          <p for="name">Full name</p>
+          <span>
+            <i class="fas fa-user"></i>
+            <input type="text" id="name" placeholder="Your name..." required>
+          </span>
+        </div>
+        <div class="input-box">
+          <p for="address">Address</p>
+          <span>
+            <i class="fas fa-home"></i>
+            <input type="text" id="address" placeholder="Your address" required>
+          </span>
+        </div>
+        <div class="input-box">
+          <p for="city">City</p>
+          <span>
+            <i class="fas fa-city"></i>
+            <input type="text" id="city" placeholder="Your city..." required>
+          </span>
+        </div>
+        <div class="form-doble">
+          <div class="input-box doble m-right">
+            <p for="country">Country</p>
+            <span class="country">
+              <i class="fas fa-globe-americas"></i>
+              <select name="contry" id="country" required>
+                <option>Your contry...</option>
+                <option value="Antigua y Barbuda" id="AG">Antigua y Barbuda</option>
+                <option value="Argentina" id="AR">Argentina</option>
+                <option value="Bahamas" id="BS">Bahamas</option>
+                <option value="Barbados" id="BB">Barbados</option>
+                <option value="Bolivia" id="BO">Bolivia</option>
+                <option value="Brasil" id="BR">Brasil</option>
+                <option value="Canadá" id="CA">Canadá</option>
+                <option value="Chile" id="CL">Chile</option>
+                <option value="Colombia" id="CO">Colombia</option>
+                <option value="Costa Rica" id="CR">Costa Rica</option>
+                <option value="Cuba" id="CU">Cuba</option>
+                <option value="Dominica" id="DM">Dominica</option>
+                <option value="Ecuador" id="EC">Ecuador</option>
+                <option value="El Salvador" id="SV">El Salvador</option>
+                <option value="Estados Unidos" id="US">Estados Unidos</option>
+                <option value="Granada" id="GD">Granada</option>
+                <option value="Guatemala" id="GT">Guatemala</option>
+                <option value="Guayana" id="GY">Guayana</option>
+                <option value="Guayana francesa" id="GF">Guayana francesa</option>
+                <option value="Haití" id="HT">Haití</option>
+                <option value="Honduras" id="HN">Honduras</option>
+                <option value="Jamaica" id="JM">Jamaica</option>
+                <option value="México" id="MX">México</option>
+                <option value="Nicaragua" id="NI">Nicaragua</option>
+                <option value="Panamá" id="PA">Panamá</option>
+                <option value="Paraguay" id="PY">Paraguay</option>
+                <option value="Perú" id="PE">Perú</option>
+                <option value="República Dominicana" id="DO">República Dominicana</option>
+                <option value="San Vicente e Islas Granadinas" id="VC">San Vicente e Islas Granadinas</option>
+                <option value="Santa Lucía" id="LC">Santa Lucía</option>
+                <option value="Trinidad y Tobago" id="TT">Trinidad y Tobago</option>
+                <option value="Uruguay" id="UY">Uruguay</option>
+                <option value="Venezuela" id="VE">Venezuela</option>
+              </select>
+            </span>
+          </div>
+          <div class="input-box doble m-left">
+            <p class="code">Postal code</p>
+            <span class="code">
+              <i class="fas fa-book"></i>
+              <input type="text" id="code" placeholder="Your postal code" required>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-submit">
+        <input type="checkbox" id="save">
+        <label for="save" class="save">Save this information for next time</label>
+      </div>
+       <!-- onclick="return validation(this.form)" -->
+      <button type="submit" onclick="validation(this.form)">Continue</button>
+    </form>
+    <div class="items-producto">
+      <div class="producto">
+        <img src="./img/photo1.png">
+        <div class="info-producto">
+          <h3>Vintage Backbag</h3>
+          <div class="price">
+            <div class="descuento">$54.99</div> 
+            <div class="no-descuento"><del>$94.99</del></div>
+          </div>
+          <div class="cantidad">
+            <button onclick="rest()"><i class="fas fa-minus"></i></button>
+            <input type="number" id="cantidad_1" value="1">
+            <button onclick="plus()"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="./img/photo2.png">
+        <div class="info-producto">
+          <h3>Live Shoes</h3>
+          <div class="price">
+            <div class="descuento">$74.99</div> 
+            <div class="no-descuento"><del>$124.99</del></div>
+          </div>
+          <div class="cantidad">
+            <button onclick="rest()"><i class="fas fa-minus"></i></button>
+            <input type="number" id="cantidad_1" value="1">
+            <button onclick="plus()"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="costos">
+        <table>
+          <tr>
+            <td class="descripcion">Shipping</td>
+            <td class="monto">$19</td>
+          </tr>
+          <tr>
+            <td class="descripcion">Total</td>
+            <td class="monto">$148.98</td>
+          </tr>
+        </table>
+      </div>
+    </div> 
+  </div>
+  <footer>
+    <span>created by <b>@sarkastherin</b> - devChallenges.io</span>
+  </footer>
+  <script src="./js/main.js"></script>
+</body>
+</html>
